@@ -1,6 +1,6 @@
 # Library Management System API
 
-A comprehensive RESTful API for managing library operations including books, users, and transactions. Built with Node.js, Express.js, and MongoDB with JWT authentication.
+A comprehensive RESTful API for managing library operations including books, users, and transactions. Built with Node.js, Express.js with JWT authentication.
 
 ## 🚀 Features
 
@@ -30,7 +30,6 @@ Once the server is running, visit:
 
 - **Runtime**: Node.js
 - **Framework**: Express.js
-- **Database**: MongoDB with Mongoose ODM
 - **Authentication**: JSON Web Tokens (JWT)
 - **Validation**: Joi
 - **Security**: Helmet, CORS, Rate Limiting
@@ -45,7 +44,7 @@ library-management-api/
 ├── package.json              # Dependencies and scripts
 ├── README.md                 # Project documentation
 ├── config/
-│   ├── database.js           # Database configuration
+│   ├── database.js           # Database configuration (simulated)
 │   └── swagger.js            # Swagger/OpenAPI configuration
 ├── models/
 │   ├── Book.js              # Book data model
@@ -59,6 +58,10 @@ library-management-api/
 ├── middleware/
 │   ├── auth.js              # JWT authentication middleware
 │   └── validation.js        # Request validation schemas
+├── data/
+│   ├── books.json           # Sample book data
+│   ├── users.json           # Sample user data
+│   └── transactions.json    # Sample transaction data
 └── utils/
     └── seedData.js          # Sample data seeding utility
 ```
@@ -67,7 +70,6 @@ library-management-api/
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- MongoDB (local installation or MongoDB Atlas)
 - npm or yarn
 
 ### Installation
@@ -81,7 +83,6 @@ library-management-api/
    Create a `.env` file in the root directory:
    ```env
    PORT=3000
-   MONGODB_URI=mongodb://localhost:27017/library_management
    JWT_SECRET=your-super-secret-jwt-key-change-in-production
    JWT_EXPIRES_IN=7d
    NODE_ENV=development
@@ -261,31 +262,9 @@ GET /api/transactions?status=BORROWED&page=1&limit=10
 - **Security Headers**: Helmet.js for security headers
 - **CORS**: Configurable Cross-Origin Resource Sharing
 
-## 🚀 Deployment
-
-### Environment Variables for Production
-```env
-NODE_ENV=production
-PORT=3000
-MONGODB_URI=your-production-mongodb-uri
-JWT_SECRET=your-super-secure-jwt-secret
-JWT_EXPIRES_IN=7d
-```
-
-### Docker Deployment (Optional)
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install --production
-COPY . .
-EXPOSE 3000
-CMD ["npm", "start"]
-```
-
 ## 📝 Development Notes
 
-- **Database**: Currently configured for MongoDB. For demo purposes, in-memory storage is used in WebContainer
+- **Data Storage**: Currently using in-memory storage with JSON files for demo purposes
 - **File Organization**: Modular architecture with separated concerns
 - **Error Handling**: Comprehensive error handling with proper HTTP status codes
 - **Logging**: Morgan middleware for HTTP request logging
@@ -307,7 +286,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support or questions:
 - Open an issue on GitHub
-- Email: admin@library.com
 - Documentation: `http://localhost:3000/api-docs`
 
 ---
