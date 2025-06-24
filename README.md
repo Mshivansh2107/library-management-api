@@ -285,5 +285,10 @@ For support or questions:
 - Documentation: `http://localhost:3000/api-docs`
 
 ---
+Output:
+![image](https://github.com/user-attachments/assets/0ae04ce3-2dc9-436a-bc46-0fa6d98cf0ba)
+![image](https://github.com/user-attachments/assets/7c54af7e-a5bc-44a0-ac50-15e471bc2c28)
+![image](https://github.com/user-attachments/assets/1ec29578-ba86-4e2c-bb7f-5f8a8c402171)
+
 
 **Built with ❤️ for efficient library management**
