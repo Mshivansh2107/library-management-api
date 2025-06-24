@@ -278,10 +278,6 @@ GET /api/transactions?status=BORROWED&page=1&limit=10
 4. Push to branch: `git push origin feature-name`
 5. Submit a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 📞 Support
 
 For support or questions:
